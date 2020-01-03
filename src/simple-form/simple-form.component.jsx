@@ -1,15 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
+import useInputState from '../hooks/useInputState';
+import './simple-form.styles.css';
 
 function SimpleForm() {
-    const [email, setEmail] = useState('');
-    const handleChange = (e) => {
-        setEmail(e.target.value)
-    }
+    const [email, handleEmailChange, resetEmail] = useInputState('');
+    const [name, handleNameChange, resetName] = useInputState('');
 
     return (
-        <div>
+        <div className='simple-form-container'>
             <h1>Your email is... {email}</h1>
-            <input type='text' value={email} onChange={handleChange} placeholder='Enter email address' />
+            <input type='text' value={email} onChange={handleEmailChange} placeholder='Enter email address' />
+            <button onClick={resetEmail}>Submit</button>
+
+            <h1>Your name is... {name}</h1>
+            <input type='text' value={name} onChange={handleNameChange} placeholder='Enter your name' />
+            <button onClick={resetName}>Submit</button>
         </div>
     )
 }

@@ -1,3 +1,4 @@
+// custom hook useInputState
 import React from 'react';
 import useInputState from '../hooks/useInputState';
 import './simple-form.styles.css';

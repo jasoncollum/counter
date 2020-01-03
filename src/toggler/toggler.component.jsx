@@ -1,3 +1,4 @@
+// custom hook useToggle
 import React from 'react';
 import useToggle from '../hooks/useToggle';
 import './toggler.styles.css';
